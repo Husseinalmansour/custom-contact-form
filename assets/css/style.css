@@ -1,0 +1,29 @@
+#ccf-contact-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#ccf-contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+#ccf-contact-form input,
+#ccf-contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+#ccf-contact-form input[type="submit"] {
+    background-color: #0073aa;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#ccf-contact-form input[type="submit"]:hover {
+    background-color: #005177;
+}
