@@ -32,7 +32,7 @@ function ccf_process_form() {
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ccf_submit'])) {
-        // Your form processing logic (e.g., wp_mail).
+       
     
         // Redirect with a success flag in the query string.
         wp_safe_redirect(add_query_arg('ccf_success', '1', esc_url_raw($_SERVER['REQUEST_URI'])));
