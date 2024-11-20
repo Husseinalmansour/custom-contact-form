@@ -31,7 +31,17 @@ function ccf_process_form() {
         wp_die('Failed to send email. Please try again.');
     }
 
-    // Redirect after submission.
-    wp_redirect(home_url());
-    exit;
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ccf_submit'])) {
+        // Your form processing logic (e.g., wp_mail).
+    
+        // Redirect with a success flag in the query string.
+        wp_safe_redirect(add_query_arg('ccf_success', '1', esc_url_raw($_SERVER['REQUEST_URI'])));
+        exit;
+    }
+    
+    // Display the success message.
+    if (isset($_GET['ccf_success']) && $_GET['ccf_success'] == '1') {
+        echo '<div class="ccf-success-message">Thank you for your message! We will get back to you soon.</div>';
+    }
+    
 }
